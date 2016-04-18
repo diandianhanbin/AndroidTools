@@ -1,5 +1,8 @@
 # ecoding=utf-8
 from Tkinter import *
+
+import time
+
 import common
 import ConfigParser
 import adb
@@ -227,6 +230,7 @@ class AndroidTools:
             while status == 'True':
                 f.write(self.ad.get_meminfo(package_name))
                 f.write('\n')
+                time.sleep(0.5)
                 self.cf.read('monkey.conf')
                 if self.cf.get('monkey_check', 'mark') == 'False':
                     break
@@ -237,8 +241,9 @@ class AndroidTools:
         t.start()
 
     def stop_meminfo(self):
+        self.cf.set('cpu_check', 'mark', 'False')
+        self.cf.write(open('monkey.conf', 'w'))
         self.cm.set_text(self.memstatus, '停止获取内存信息')
-        self.db_sheet.update({"id": "check"}, {'$set': {"stop": "False"}})
 
     def get_cpuinfo(self, package_name):
         self.cm.set_text(self.cpustatus, '正在获取cpu信息.....')

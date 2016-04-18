@@ -71,13 +71,15 @@ class Adb:
 			while True:
 				a = os.popen('adb shell dumpsys cpuinfo | grep ' + package_name)
 				cpuinfo_list = a.readlines()[0].split(' ')
-				cpu = [cpuinfo_list[2], cpuinfo_list[4], cpuinfo_list[7]]
-				cpuinfo = ','.join(cpu)
-				f.write(cpuinfo)
-				f.write('\n')
-				self.cf.read('monkey.conf')
-				if self.cf.get('cpu_check', 'mark') == "False":
-					break
+				if len(cpuinfo_list) == 13:
+					cpu = [cpuinfo_list[2], cpuinfo_list[4], cpuinfo_list[7]]
+					cpuinfo = ','.join(cpu)
+					f.write(cpuinfo)
+					f.write('\n')
+					time.sleep(0.5)
+					self.cf.read('monkey.conf')
+					if self.cf.get('cpu_check', 'mark') == "False":
+						break
 
 	def get_meminfo(self, package_name):
 		"""
@@ -88,10 +90,16 @@ class Adb:
 		f = os.popen('adb shell dumpsys meminfo ' + package_name)
 		for x in f.readlines():
 			newlist.append(x.strip())
-		mem_total = newlist[8].split('   ')[7]
-		mem_used = newlist[8].split('   ')[8]
-		mem_free = newlist[8].split('   ')[9]
+		try:
+			mem_total = newlist[8].split('   ')[7]
+			mem_used = newlist[8].split('   ')[8]
+			mem_free = newlist[8].split('   ')[9]
+		except Exception:
+			mem_total = ''
+			mem_used = ''
+			mem_free = ''
 		meminfo = '{},{},{}'.format(mem_total, mem_used, mem_free)
+
 		return meminfo
 
 	def get_dir(self, url):
@@ -200,6 +208,7 @@ class Adb:
 				fn.write(flowInfo)
 				fn.write('\n')
 				print flowInfo
+				time.sleep(0.5)
 				self.cf.read('monkey.conf')
 				if self.cf.get('flow_mark', 'mark') == "False":
 					break
@@ -249,4 +258,4 @@ if __name__ == '__main__':
 	# adb.get_cpuinfo('com.weizq', 'cpuinfo')
 	# adb.write_flow('com.weizq', 'flowinfo')
 	# print adb.get_third_package()
-	print adb.get_cur_pknm()
+	# print adb.get_cur_pknm()
