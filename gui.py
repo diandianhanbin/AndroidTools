@@ -5,7 +5,6 @@ import ConfigParser
 import adb
 import monkey
 import multiprocessing
-import pymongo
 
 __author__ = "Sven_Weng"
 
@@ -17,10 +16,6 @@ class AndroidTools:
         self.cf.read('monkey.conf')
         self.ad = adb.Adb()
         self.mk = monkey.Monkey()
-        client = pymongo.MongoClient('localhost', 27017)
-        database = client['androidtools']
-        self.db_sheet = database['monitor']
-        # self.db_sheet.insert_one({"stop": "True", "id": "check"})
 
         master = Tk()
         master.title('Android_Tools  Design By Sven')
@@ -224,13 +219,16 @@ class AndroidTools:
         self.ad.stop_monkey(status)
 
     def run_meminfo(self, package_name):
-        self.db_sheet.update({"id": "check"}, {'$set': {"stop": "True"}})
-        status = self.db_sheet.find_one({"id": "check"})
+        self.cf.read('monkey.conf')
+        self.cf.set('monkey_check', 'mark', 'True')
+        self.cf.write(open('monkey.conf', 'w'))
+        status = self.cf.get('monkey_check', 'mark')
         with open(self.ad.get_dir('meminfo'), 'w') as f:
-            while status['stop'] == 'True':
+            while status == 'True':
                 f.write(self.ad.get_meminfo(package_name))
                 f.write('\n')
-                if self.db_sheet.find_one({"id": "check"})['stop'] == 'False':
+                self.cf.read('monkey.conf')
+                if self.cf.get('monkey_check', 'mark') == 'False':
                     break
 
     def get_meminfo(self, package_name):
