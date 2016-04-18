@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安卓性能监控数据</title>
+    <script src="/static/js/echarts.common.min.js"></script>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/static/js/charts.js"></script>
+    <script src="/static/js/dark.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'index' %}">Android压测数据中心</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'mem_info' %}">内存监控</a></li>
+                <li><a href="{% url 'cpu_info' %}">CUP监控</a></li>
+                <li><a href="#">gfinfo监控</a></li>
+                <li><a href="{% url 'getFlow' %}">流量监控</a></li>
+                <li><a>打开监控工具获取数据===></a></li>
+                <form class="navbar-form navbar-left">
+                    {% csrf_token %}
+                    <button type="button" class="btn btn-default" id="starttool">AndroidTools</button>
+                </form>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+{% block bodycontent %}
+{% endblock %}
+<!-- ECharts容器 -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+            <div id="main" style="width: 100%;height: 500px;">
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+</body>
+</html>

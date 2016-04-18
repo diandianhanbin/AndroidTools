@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+    <script>
+        $.ajax({
+            url: '/datashow/getdirlist/cpuinfo',
+            success: function (data) {
+                var arr = data['data'];
+                var select = $("<select id='selquery' class='form-control'></select>");
+                for (var i = 0; i < arr.length; i++) {
+                    select = select.append("<option value='" + arr[i] + "'>" + arr[i] + "</option>")
+                }
+                $("#selection").append(select)
+            }
+        });
+    </script>
+    <form class="form-horizontal">
+        <div class="form-group form-group-lg">
+            <label class="col-sm-2 control-label">请选择数据:</label>
+
+            <div class="col-sm-6" id="selection">
+
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-info" id="cpu_query">查看</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

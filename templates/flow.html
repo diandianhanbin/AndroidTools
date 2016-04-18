@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+    <script>
+        $.ajax({
+            url: '/datashow/getdirlist/flowinfo',
+            success: function (data) {
+                var arr = data['data'];
+                var select = $("<select id='selquery' class='form-control'></select>");
+                for (var i = 0; i < arr.length; i++) {
+                    select = select.append("<option value='" + arr[i] + "'>" + arr[i] + "</option>")
+                }
+                $("#selection").append(select)
+            }
+        });
+    </script>
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h2 class="panel-title">注意:</h2>
+        </div>
+        <div class="panel-body">
+            <p>流量测试只能测试wifi的流量,使用3G,4G网络的请勿使用.</p>
+
+            <p>流量测试的是安卓手机所有应用的流量,若只需要测试单个应用的流量,请关闭其他应用</p>
+
+            <p><strong>建议获取数据之前打开飞行模式清空wlan数据</strong></p>
+
+            <div class="input-group col-sm-6">
+                <input type="text" class="form-control" placeholder="输入包名点击右侧按钮开始测试" id="package">
+                <span class="input-group-btn">
+                <button class="btn btn-default" id="getflow">点击开始测试</button>
+                </span>
+            </div>
+            <p id="start"></p>
+
+            <p id="end"></p>
+
+            <p id="result"></p>
+        </div>
+    </div>
+    <form class="form-horizontal">
+        <div class="form-group form-group-lg">
+            <label class="col-sm-2 control-label">请选择数据:</label>
+
+            <div class="col-sm-6" id="selection">
+
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-info" id="flow_query">查看</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

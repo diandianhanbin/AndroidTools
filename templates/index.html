@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title">使用须知:</h2>
+        </div>
+        <div class="panel-body">
+            <p>Monkey,内存监控和CPU监控请使用右上角<mark>AndroidTools</mark>
+            </p>
+
+            <p>流量监控请使用web端的工具</p>
+
+            <p>如果不知道设备信息以及包名,请点击按钮获取相关信息
+                <button type="button" class="btn btn-default" id="get_third_packagename">获取信息</button>
+            </p>
+            <p>如果不知道应用对应的包名,请打开应用后点击右侧按钮
+                <button type="button" class="btn btn-default" id="get_cur_packagename">获取当前包名</button>
+            <div id="pkinfo"><span id="package_name"></span> <span id="activity_name"></span></div>
+            </p>
+        </div>
+    </div>
+    <!--第三方包列表的容器-->
+    <div id="third_list_container">
+        <div class="panel-heading" id="pk_list_header"></div>
+        <div class="panel-body">
+            <ul class="list-group" id="pk_list">
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
