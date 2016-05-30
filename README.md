@@ -22,7 +22,7 @@
 4. 请不要使用PyCharm2016.1来执行,目前Pycharm2016.1有bug,会报错adb command not found
 
 ## 新增了接口测试
-使用url的porttest的地址访问接口测试
+使用url的porttest的地址访问接口测试,能够保存每次的测试报告
 
 ##展示图
 
