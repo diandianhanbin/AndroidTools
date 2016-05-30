@@ -15,11 +15,14 @@
 3. python manage.py runserver
 4. 浏览器打开http://127.0.0.1:8000/datashow
 
-##注意
+## 注意
 1. 我在Mac环境下测试没问题,Windows可能需要微调.
 2. Monkey如果和其他监控同时用工具打开,有几率会出现异常停止的情况,目前赞为解决.
 3. 目前为个人使用,因此除错机制可能不完善,请正确的使用它.
 4. 请不要使用PyCharm2016.1来执行,目前Pycharm2016.1有bug,会报错adb command not found
+
+## 新增了接口测试
+使用url的porttest的地址访问接口测试
 
 ##展示图
 
