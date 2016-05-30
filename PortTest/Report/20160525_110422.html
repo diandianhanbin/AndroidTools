@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1>接口测试报告
+                <small>Design By Sven</small>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>测试通过 <span class="label label-success">0</span></h3>
+        </div>
+        <div class="col-md-4">
+            <h3>测试失败 <span class="label label-danger">0</span></h3>
+        </div>
+        <div class="col-md-4">
+            <h3>无结果 <span class="label label-warning">1</span></h3>
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                
+                    <li class="list-group-item"><a href="#testcase002">testcase002 - test</a></li>
+                
+            </ul>
+        </div>
+        <div class="col-md-9">
+            
+            
+                <div class="panel-group" id="accordion">
+                
+                    <div class="panel panel-warning">
+                
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#&#39;, &#39;title&#39;: &#39;1235124512451tes诶诶诶复活节的风格绝代歌姬t&#39;, &#39;summary&#39;: &#39;testtesttest&#39;, &#39;msgtype&#39;: &#39;25&#39;, &#39;action&#39;: &#39;40502&#39;, &#39;message&#39;: &#39;20140306test&#39;}">
+                        &#39;, &#39;title&#39;: &#39;1235124512451tes诶诶诶复活节的风格绝代歌姬t&#39;, &#39;summary&#39;: &#39;testtesttest&#39;, &#39;msgtype&#39;: &#39;25&#39;, &#39;action&#39;: &#39;40502&#39;, &#39;message&#39;: &#39;20140306test&#39;} - 标题:test
+                    </a>
+                </h4>
+            </div>
+            <div id="&#39;, &#39;title&#39;: &#39;1235124512451tes诶诶诶复活节的风格绝代歌姬t&#39;, &#39;summary&#39;: &#39;testtesttest&#39;, &#39;msgtype&#39;: &#39;25&#39;, &#39;action&#39;: &#39;40502&#39;, &#39;message&#39;: &#39;20140306test&#39;}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <b>发送数据</b><br>
+                    标题:test<br>
+                    发送方式:post<br>
+                    案例描述:testtest<br>
+                    发送地址:http://192.101.1.112:3005/reqxml<br>
+                    发送参数:{&#39;accountlist&#39;: &#39;18659992008
+                    <hr>
+                    
+                        返回数据<br>
+                    
+                        ACTION : 40502<br>
+                    
+                        ERRORNO : 0<br>
+                    
+                        ERRORMESSAGE : 消息导入成功<br>
+                    
+                        no except result<br>
+                    
+                </div>
+            </div>
+            </div>
+            </div>
+                <p></p>
+            
+            </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() != 0) {
+                        $("#toTop").fadeIn();
+                    } else {
+                        $("#toTop").fadeOut();
+                    }
+                });
+                $("body").append("<div id=\"toTop\" style=\"border:1px solid #444;background:#333;color:#fff;text-align:center;padding:10px 13px 7px 13px;position:fixed;bottom:10px;right:10px;cursor:pointer;display:none;font-family:verdana;font-size:22px;\">^</div>");
+                $("#toTop").click(function () {
+                    $("body,html").animate({scrollTop: 0}, 800);
+                });
+            });
+        </script>
+</body>
+</html>

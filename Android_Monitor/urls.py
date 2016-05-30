@@ -19,5 +19,6 @@ from DataShow import views
 
 urlpatterns = [
     url(r'^datashow/', include('DataShow.urls')),
+    url(r'^porttest/', include('PortTest.urls')),
     # url(r'^', views.index, name='home'),
 ]

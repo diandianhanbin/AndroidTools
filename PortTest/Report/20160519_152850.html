@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                
+                    <li class="list-group-item"><a href="#testcase005">testcase005 - 账号与唯一号绑定</a></li>
+                
+                    <li class="list-group-item"><a href="#testcase004">testcase004 - 单独推送消息</a></li>
+                
+            </ul>
+        </div>
+        <div class="col-md-9">
+            
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#testcase005">
+                                    testcase005 - 测试标题:账号与唯一号绑定
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="testcase005" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <b>发送数据</b><br>
+                                测试标题:账号与唯一号绑定<br>
+                                发送方式:post<br>
+                                案例描述:账号与唯一号绑定<br>
+                                发送地址:http://192.101.1.112:3005/reqxml<br>
+                                发送参数:{u&#39;action&#39;: u&#39;44800&#39;, u&#39;account&#39;: u&#39;10000034792&#39;, u&#39;accounttype&#39;: u&#39;1&#39;, u&#39;uniqueid&#39;: u&#39;C5ADAEB1-B250-419D-8EC6-22201AF3B30C&#39;}
+                                <hr>
+                                
+                                    返回数据<br>
+                                
+                                    ACTION : 44800<br>
+                                
+                                    ERRORNO : 1<br>
+                                
+                                    ERRORMESSAGE : C5ADAEB1-B250-419D-8EC6-22201AF3B30C.10000034792<br>
+                                
+                                    <br>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+            
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#testcase004">
+                                    testcase004 - 测试标题:单独推送消息
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="testcase004" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <b>发送数据</b><br>
+                                测试标题:单独推送消息<br>
+                                发送方式:post<br>
+                                案例描述:单独推送消息<br>
+                                发送地址:http://192.101.1.112:3005/reqxml<br>
+                                发送参数:{u&#39;account&#39;: u&#39;10000034792&#39;, u&#39;uniqueid&#39;: u&#39;C5ADAEB1-B250-419D-8EC6-22201AF3B30C&#39;, u&#39;title&#39;: u&#39;\u6d4b\u8bd5\u6d4b\u8bd51234&#39;, u&#39;menuid&#39;: u&#39;203&#39;, u&#39;summary&#39;: u&#39;\u8c46\u8c46\u8c46&#39;, u&#39;msgfrom&#39;: u&#39;wzq&#39;, u&#39;accounttype&#39;: u&#39;1&#39;, u&#39;action&#39;: u&#39;44803&#39;, u&#39;msgtype&#39;: u&#39;25&#39;, u&#39;message&#39;: u&#39;12345&#39;}
+                                <hr>
+                                
+                                    返回数据<br>
+                                
+                                    ACTION : 44803<br>
+                                
+                                    ERRORNO : 1<br>
+                                
+                                    ERRORMESSAGE : 推送消息导入成功!<br>
+                                
+                                    <br>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

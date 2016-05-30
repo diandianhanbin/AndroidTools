@@ -249,7 +249,7 @@ $(document).ready(function () {
             })
         })
     });
-    //获取当前包名
+    //获取当前包名和Activity
     $("#get_cur_packagename").click(function () {
         $.getJSON(
             '/datashow/get_cur_packagename/',

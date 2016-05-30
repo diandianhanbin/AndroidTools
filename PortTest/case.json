@@ -1,0 +1,23 @@
+[
+  {
+    "TestId": "testcase003",
+    "Method": "post",
+    "Title": "群推消息(消息会入库)",
+    "Desc": "群推消息(消息会入库)",
+    "Url": "http://192.101.1.112:3005/reqxml",
+    "InputArg": {
+      "action": "44811",
+      "title": "炒跟测试测试",
+      "summary": "testtesttest",
+      "message": "张帅军test",
+      "msgfrom": "翁彦彬",
+      "msgtype": "2",
+      "menuid": "203"
+    },
+    "Result": {
+      "ERRORNO": "0",
+      "ACTION": "44811",
+      "ERRORMESSAGE": "操作成功"
+    }
+  }
+]

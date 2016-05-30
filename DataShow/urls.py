@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^testflow/', views.flowTest, name='flowTest'),
     url(r'^get_cur_packagename', views.get_cur_pknm, name='getCurPackagename'),
     url(r'^get_third_packagename', views.get_third_pknm, name='getThirdPackagename'),
+    url(r'^getallinfo', views.get_all_info, name='get_all_info')
 ]

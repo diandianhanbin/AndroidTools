@@ -1,0 +1,107 @@
+[
+  {
+    "TestId": "testcase001",
+    "Method": "post",
+    "Title": "获取唯一号",
+    "Desc": "正常获取唯一号",
+    "Url": "http://192.101.1.112:3005/reqxml",
+    "InputArg": {
+      "action": "44802",
+      "tfrom": "Android",
+      "clientinfo": "mobilekind:android,imei:864895024780163,imsi:310260000000000,phonekind:SCH-I879,phoneve:4.2.2,ipadd:fe80::a00:27ff:fed6:8757%eth2,phonemac:AC:9E:17:2E:12:00,connectiontype:0,IP:,"
+    },
+    "Result": {
+      "uniqueid": "106D9B73-D51C-4AE8-BE5B-BAE24E038D20",
+      "errorno": "0",
+      "errormessage": "OK"
+    }
+  },
+  {
+    "TestId": "testcase002",
+    "Method": "post",
+    "Title": "test",
+    "Desc": "testtest",
+    "Url": "http://192.101.1.112:3005/reqxml",
+    "InputArg": {
+      "action": "44803",
+      "account": "18659980966",
+      "uniqueid": "106D9B73-D51C-4AE8-BE5B-BAE24E038D20",
+      "title": "test",
+      "summary": "testtesttest",
+      "message": "20140306test",
+      "msgtype": "25"
+    }
+  },
+  {
+    "TestId": "testcase003",
+    "Method": "post",
+    "Title": "群推消息(消息会入库)",
+    "Desc": "群推消息(消息会入库)",
+    "Url": "http://192.101.1.112:3005/reqxml",
+    "InputArg": {
+      "action": "44811",
+      "title": "新股申购新股申购新股申",
+      "summary": "testtesttest",
+      "message": "张帅军test",
+      "msgfrom": "翁彦彬",
+      "msgtype": "34",
+      "menuid": "203"
+    },
+    "Result": {
+      "ERRORNO": "0",
+      "ACTION": "44811",
+      "ERRORMESSAGE": "操作成功"
+    }
+  },
+  {
+    "TestId": "testcase004",
+    "Method": "post",
+    "Title": "单独推送消息",
+    "Desc": "单独推送消息",
+    "Url": "http://192.101.1.112:3005/reqxml",
+    "InputArg": {
+      "action": "44803",
+      "account": "18659980966",
+      "uniqueid": "00D7C889-06A0-426E-BAB1-5741A1192038",
+      "title": "测试测试",
+      "summary": "豆豆豆",
+      "message": "12345",
+      "msgtype": "25",
+      "menuid": "203"
+    },
+    "Result": {
+      "errorno": "0"
+    }
+  },
+  {
+    "TestId": "testcase005",
+    "Method": "post",
+    "Title": "账号与唯一号绑定",
+    "Desc": "账号与唯一号绑定",
+    "Url": "http://192.101.1.112:3005/reqxml",
+    "InputArg": {
+      "action": "44800",
+      "account": "10000034792",
+      "accounttype": "1",
+      "uniqueid": "56BAC92E-3907-4804-B66B-A678C861B9D4",
+      "khbranch": "9728"
+    },
+    "Result": {
+      "errorno": "0"
+    }
+  },
+  {
+    "TestId": "testcase006",
+    "Method": "post",
+    "Title": "查看安卓用户信息",
+    "Desc": "查看安卓用户信息",
+    "Url": "http://192.101.1.112:3005/reqxml",
+    "InputArg": {
+      "action": "42011",
+      "uniqueid": "56BAC92E-3907-4804-B66B-A678C861B9D4"
+    },
+    "Result": {
+      "errorno": "0"
+    }
+  }
+]

@@ -128,3 +128,7 @@ def get_third_pknm(request):
 		'errmsg': 'ok'
 	}
 	return JsonResponse(data)
+
+
+def get_all_info(request):
+	return render(request, 'all_info.html')

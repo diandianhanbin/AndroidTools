@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block bodycontent %}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h2 class="panel-title">使用须知:</h2>
+        </div>
+        <div class="panel-body">
+
+            <p>全信息监控目前包含的内容有CPU,内存和流量
+            <form class="form-inline">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" disabled checked> CPU信息
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" disabled checked> 内存信息
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" disabled checked> 流量信息
+                    </label>
+                </div>
+                <button type="button" class="btn btn-default" id="getflow">点击开始测试</button>
+            </form>
+            </p>
+
+        </div>
+
+
+    </div>
+
+    <!--第三方包列表的容器-->
+    <div id="third_list_container">
+        <div class="panel-heading" id="pk_list_header"></div>
+        <div class="panel-body">
+            <ul class="list-group" id="pk_list">
+            </ul>
+        </div>
+    </div>
+{% endblock %}

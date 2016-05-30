@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h1>接口测试报告
+                <small>Design By Sven</small>
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>测试通过 <span class="label label-success">{{ pass }}</span></h3>
+        </div>
+        <div class="col-md-4">
+            <h3>测试失败 <span class="label label-danger">{{ fail }}</span></h3>
+        </div>
+        <div class="col-md-4">
+            <h3>无结果 <span class="label label-warning">{{ noresult }}</span></h3>
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                {% for ls in leftside %}
+                    <li class="list-group-item"><a href="#{{ ls.code }}">{{ ls.code }} - {{ ls.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9">
+            {{ x.result }}
+            {% for x in rst_data %}
+                <div class="panel-group" id="accordion">
+                {% if x.result == 'pass' %}
+                    <div class="panel panel-success">
+                {% elif x.result == 'fail' %}
+                    <div class="panel panel-danger">
+                {% elif x.result == 'no except result' %}
+                    <div class="panel panel-warning">
+                {% endif %}
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#{{ x.sendData.testid }}">
+                        {{ x.sendData.testid }} - {{ x.sendData.csbt }}
+                    </a>
+                </h4>
+            </div>
+            <div id="{{ x.sendData.testid }}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <b>{{ x.sendData.fssj }}</b><br>
+                    {{ x.sendData.csbt }}<br>
+                    {{ x.sendData.fsfs }}<br>
+                    {{ x.sendData.alms }}<br>
+                    {{ x.sendData.fsdz }}<br>
+                    {{ x.sendData.fscs }}
+                    <hr>
+                    {% for v in x.dealData %}
+                        {{ v }}<br>
+                    {% endfor %}
+                </div>
+            </div>
+            </div>
+            </div>
+                <p></p>
+            {% endfor %}
+            </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() != 0) {
+                        $("#toTop").fadeIn();
+                    } else {
+                        $("#toTop").fadeOut();
+                    }
+                });
+                $("body").append("<div id=\"toTop\" style=\"border:1px solid #444;background:#333;color:#fff;text-align:center;padding:10px 13px 7px 13px;position:fixed;bottom:10px;right:10px;cursor:pointer;display:none;font-family:verdana;font-size:22px;\">^</div>");
+                $("#toTop").click(function () {
+                    $("body,html").animate({scrollTop: 0}, 800);
+                });
+            });
+        </script>
+</body>
+</html>

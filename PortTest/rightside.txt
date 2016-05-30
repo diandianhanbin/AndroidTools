@@ -1,0 +1,1 @@
+发送数据|标题:群推消息(消息会入库)|发送方式:post|案例描述:群推消息(消息会入库)|发送地址:http://192.101.1.112:3005/reqxml|发送参数:{'title': '炒跟测试测试', 'menuid': '203', 'summary': 'testtesttest', 'msgtype': '2', 'action': '44811', 'msgfrom': '翁彦彬', 'message': '张帅军test'}|testcase003
